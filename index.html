@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Lucky Birthday</title>
+    <script src='https://unpkg.com/tesseract.js@4.0.0/dist/tesseract.min.js'></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/BrowserFS/2.0.0/browserfs.min.js" integrity="sha512-mz0EI+Ay1uIJP7rZEX8C/JlTAcHRIQ8Sny4vxmmj8MSzDJgG9NxxY2pUmOGv1lO7imFIFMyjjCzEXEywNgaUdQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+  </head>
+  <body>
+    <div id="container">
+      <h1>Find your Lucky Birthday Ranking!</h1>
+      <form>
+        <label for="bday">Birthday</label>
+        <input type="text" id="bday" name="bday" required placeholder="Input birthday..." aria-placeholder="Input birthday" />
+        <input type="button" id="submit" name="submit" value="I'm feeling lucky!" />
+      </form>
+      <div id="result"></div>
+    </div>
+    <script src="script.js"></script>
+  </body>
+</html>
