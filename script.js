@@ -1,7 +1,7 @@
 const form = document.getElementById("form");
 const result = document.getElementById("result");
 
-fetch("data/values.csv")
+fetch("values.csv")
     .then(res => res.text)
     .then(text => console.log(text));
 
