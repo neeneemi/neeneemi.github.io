@@ -1,7 +1,10 @@
-Tesseract.recognize(
-  "https://github.com/neeneemi/neeneemi.github.io/blob/main/images/1.jpeg",
-  "eng",
-  { logger: m => console.log(m) }
-).then(({ data: { text } }) => {
-  console.log(text);
-});
+const form = document.getElementById("form");
+const result = document.getElementById("result");
+
+fetch("./values.csv")
+    .then(res => res.text)
+    .then(text => console.log(text));
+
+form.addEventListener("submit", function(e) {
+  e.preventDefault();
+})
