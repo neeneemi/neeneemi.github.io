@@ -10,25 +10,26 @@ const datesDatalist = document.getElementById("dateInput");
 const monthsArray = Array(12);
 console.log(monthsArray);
 const datesArray = Array(31);
-console.log(datesArray);
 
-monthsArray.forEach((month, index) => {
-  console.log("month", month);
-  let monthName = dayjs().month(index).format("MMMM");
-  let opt = document.createElement("option");
-  opt.value = index;
-  opt.append(monthName);
-  monthsDropdown.append(opt);
-})
+document.onload = function() { 
+  monthsArray.forEach((month, index) => {
+    console.log("month", month);
+    let monthName = dayjs().month(index).format("MMMM");
+    let opt = document.createElement("option");
+    opt.value = index;
+    opt.append(monthName);
+    monthsDropdown.append(opt);
+  });
 
-datesArray.forEach((date, index) => {
-  console.log("date", date);
-  let opt = document.createElement("option");
-  opt.value = index + 1;
-  datesDropdown.append(opt);
-})
+  datesArray.forEach((date, index) => {
+    console.log("date", date);
+    let opt = document.createElement("option");
+    opt.value = index + 1;
+    datesDropdown.append(opt);
+  });
+}
 
-form.addEventListener("submit", function(e) {
+form.onsubmit = function(e) {
   e.preventDefault();
 
   let monthVal = monthsDatalist.value;
@@ -38,4 +39,4 @@ form.addEventListener("submit", function(e) {
   fetch("./data/array_vals.json")
     .then(response => response.json())
     .then(data => console.log(data));
-})
+}
