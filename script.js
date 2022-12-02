@@ -12,21 +12,21 @@ console.log(monthsArray);
 const datesArray = Array.from(Array(31).keys());
 
 document.onload = function() { 
-  monthsArray.forEach(month => {
-    console.log("month", month);
-    let monthName = dayjs().month(index).format("MMMM");
+  for (let i = 0; i < monthsArray.length; i++) {
+    console.log("month", monthsArray[i]);
+    let monthName = dayjs().month(i).format("MMMM");
     let opt = document.createElement("option");
-    opt.value = index;
+    opt.value = monthsArray[i];
     opt.append(monthName);
     monthsDropdown.append(opt);
-  });
+  }
 
-  datesArray.forEach(date => {
-    console.log("date", date);
+  for (let i = 0; i < datesArray.length; i++) {
+    console.log("date", datesArray[i]);
     let opt = document.createElement("option");
-    opt.value = index + 1;
+    opt.value = datesArray[i] + 1;
     datesDropdown.append(opt);
-  });
+  };
 }
 
 form.onsubmit = function(e) {
