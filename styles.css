@@ -162,9 +162,14 @@ footer {
     margin-top: 5%;
   }
 
+  select {
+    padding: 10px 7px;
+  }
+
   #tagline {
     font-size: 20pt;
     text-align: center;
-    margin-bottom: 25%;
+    margin-bottom: 15%;
+    z-index: -3;
   }
 }
