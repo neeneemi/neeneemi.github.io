@@ -1,3 +1,5 @@
+const YEAR = 2023;
+
 const form = document.getElementById("form");
 const birthday = document.getElementById("bday")
 const result = document.getElementById("result");
@@ -8,11 +10,9 @@ const monthsDatalist = document.getElementById("monthInput");
 const datesDatalist = document.getElementById("dateInput");
 
 const monthsArray = Array.from(Array(12).keys());
-console.log(monthsArray);
 const datesArray = Array.from(Array(31).keys());
 
 for (let i = 0; i < monthsArray.length; i++) {
-  console.log("month", monthsArray[i]);
   let monthName = dayjs().month(i).format("MMMM");
   let opt = document.createElement("option");
   opt.value = monthsArray[i];
@@ -21,7 +21,6 @@ for (let i = 0; i < monthsArray.length; i++) {
 }
 
 for (let i = 0; i < datesArray.length; i++) {
-  console.log("date", datesArray[i]);
   let opt = document.createElement("option");
   opt.value = datesArray[i] + 1;
   datesDropdown.append(opt);
@@ -33,8 +32,16 @@ form.onsubmit = function(e) {
   let monthVal = monthsDatalist.value;
   let dateVal = datesDatalist.value;
   console.log(monthVal, dateVal);
+
+  let formattedDate = dayjs(`${monthVal} ${dateVal}, ${YEAR}`).format("MM-DD");
+  console.log(formattedDate);
   
   fetch("./data/array_vals.json")
     .then(response => response.json())
-    .then(data => console.log(data));
+    .then(data => { 
+      console.log(data);
+      let dataResult = data.filter(obj => obj.birthday === formattedDate)[0];
+      let rankResult = dataResult.rank;
+      result.append(`Your lucky ranking is #${rankResult}!`);
+    });
 }
