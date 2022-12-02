@@ -2,14 +2,14 @@
 <html>
   <head>
     <title>Lucky Birthday</title>
-    <script src="https://d3js.org/d3.v7.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/dayjs@1/dayjs.min.js"></script>
   </head>
   <body>
     <div id="container">
       <h1>Find your Lucky Birthday Ranking!</h1>
       <form id="form">
         <label for="bday">Birthday</label>
-        <input type="text" id="bday" name="bday" required placeholder="Input birthday..." aria-placeholder="Input birthday" />
+        <input type="date" id="bday" name="bday" min="2023-01-01" max="2023-12-01" placeholder="Input birthday..." aria-placeholder="Input birthday" required  />
         <input type="submit" id="submit" name="submit" value="I'm feeling lucky!" />
       </form>
       <div id="result"></div>
