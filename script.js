@@ -57,6 +57,23 @@ form.onsubmit = function(e) {
         } else {
           result.innerHTML += "";
         }
+
+        switch (dataResult.birthday) {
+          case "03-29":
+            result.innerHTML += "<p style='font-style: italic'>Fun fact, you also share a birthday with Tomoya Mashiro from Ra*bits. Hurray for the year of the rabbit!</p>";
+            break;
+          case "04-27":
+            result.innerHTML += "<p style='font-style: italic'>Fun fact, you also share a birthday with Nazuna Nito from Ra*bits. Hurray for the year of the rabbit!</p>";
+            break;
+          case "07-15":
+            result.innerHTML += "<p style='font-style: italic'>Fun fact, you also share a birthday with Hajime Shino from Ra*bits. Hurray for the year of the rabbit!</p>";
+            break;
+          case "09-07":
+            result.innerHTML += "<p style='font-style: italic'>Fun fact, you also share a birthday with Mitsuru Tenma from Ra*bits. Hurray for the year of the rabbit!</p>";
+            break;
+          default:
+            break;
+        }
       }
     });
 }
