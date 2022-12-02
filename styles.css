@@ -1,0 +1,49 @@
+body {
+  margin: 0;
+  padding: 0;
+}
+
+#container {
+  width: 100%;
+}
+@import url('https://fonts.googleapis.com/css2?family=Lato&display=swap');
+
+body {
+  font-family: 'Lato', sans-serif;
+}
+
+h1 {
+  margin-left: 2%;
+}
+
+form {
+  padding: 2%;
+}
+
+#date-group {
+  width: 25%;
+  display: flex;
+  flex-flow: row nowrap;
+  align-items: flex-start;
+  justify-content: space-between;
+}
+
+#date-group .group {
+  display: flex;
+  flex-flow: column nowrap;
+}
+
+input[type=submit] {
+  margin-top: 2%;
+}
+
+#result {
+  margin-left: 2%;
+}
+
+footer {
+  padding: 2%;
+  border-top: 1px solid #dddddd;
+  font-size: 8pt;
+  color: #777;
+}

@@ -42,6 +42,6 @@ form.onsubmit = function(e) {
       console.log(data);
       let dataResult = data.filter(obj => obj.birthday === formattedDate)[0];
       let rankResult = dataResult.rank;
-      result.append(`Your lucky ranking is #${rankResult}!`);
+      result.innerHTML = `Your lucky ranking is #${rankResult}!`;
     });
 }
