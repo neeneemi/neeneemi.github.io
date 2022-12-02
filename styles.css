@@ -94,8 +94,11 @@ input[type=submit] {
 }
 
 #result {
-  text-align: center;
-  margin-top: 10%;
+  margin-top: 5%;
+}
+
+#result .mainResult {
+  font-size: 16pt;
 }
 
 footer {
