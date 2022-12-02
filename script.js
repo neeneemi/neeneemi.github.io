@@ -11,23 +11,21 @@ const monthsArray = Array.from(Array(12).keys());
 console.log(monthsArray);
 const datesArray = Array.from(Array(31).keys());
 
-document.onload = function() { 
-  for (let i = 0; i < monthsArray.length; i++) {
-    console.log("month", monthsArray[i]);
-    let monthName = dayjs().month(i).format("MMMM");
-    let opt = document.createElement("option");
-    opt.value = monthsArray[i];
-    opt.append(monthName);
-    monthsDropdown.append(opt);
-  }
-
-  for (let i = 0; i < datesArray.length; i++) {
-    console.log("date", datesArray[i]);
-    let opt = document.createElement("option");
-    opt.value = datesArray[i] + 1;
-    datesDropdown.append(opt);
-  };
+for (let i = 0; i < monthsArray.length; i++) {
+  console.log("month", monthsArray[i]);
+  let monthName = dayjs().month(i).format("MMMM");
+  let opt = document.createElement("option");
+  opt.value = monthsArray[i];
+  opt.append(monthName);
+  monthsDropdown.append(opt);
 }
+
+for (let i = 0; i < datesArray.length; i++) {
+  console.log("date", datesArray[i]);
+  let opt = document.createElement("option");
+  opt.value = datesArray[i] + 1;
+  datesDropdown.append(opt);
+};
 
 form.onsubmit = function(e) {
   e.preventDefault();
