@@ -58,3 +58,15 @@ footer {
   padding-top: 1%;
   margin-top: 5%;
 }
+
+@media (max-width: 768px) {
+  form {
+    width: 100%;
+  }
+
+  #date-group {
+    width: 100%;
+    padding: 2%;
+    flex-flow: column nowrap;
+  }
+}
