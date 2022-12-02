@@ -8,7 +8,9 @@ const monthsDatalist = document.getElementById("monthInput");
 const datesDatalist = document.getElementById("dateInput");
 
 const monthsArray = Array(12);
+console.log(monthsArray);
 const datesArray = Array(31);
+console.log(datesArray);
 
 monthsArray.forEach((month, index) => {
   console.log("month", month);
@@ -29,8 +31,8 @@ datesArray.forEach((date, index) => {
 form.addEventListener("submit", function(e) {
   e.preventDefault();
 
-  let monthVal = monthsDropdown.value;
-  let dateVal = datesDropdown.value;
+  let monthVal = monthsDatalist.value;
+  let dateVal = datesDatalist.value;
   console.log(monthVal, dateVal);
   
   fetch("./data/array_vals.json")
