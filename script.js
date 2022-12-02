@@ -37,12 +37,14 @@ form.onsubmit = function(e) {
   fetch("./data/array_vals.json")
     .then(response => response.json())
     .then(data => { 
+      result.innerHTML = "";
       if (!dayjs(`${monthVal} ${dateVal}, ${YEAR}`).isValid()) {
         result.innerHTML = "Sorry, that date is invalid."
       } else {
         let dataResult = data.filter(obj => obj.birthday === formattedDate)[0];
         let rankResult = dataResult.rank;
         result.innerHTML = `<p class="mainResult">Your lucky ranking is <strong>#${rankResult}</strong>!</p>`;
+        console.log("rank result", rankResult);
         if (rankResult <= 50) {
           result.innerHTML += "<p style='font-style: italic'>Wow, it's really your lucky year! Maybe you'll find a dollar on the ground.</p>";
         } else if (50 < rankResult <= 100) {
