@@ -41,6 +41,7 @@ form.onsubmit = function(e) {
       } else {
         let dataResult = data.filter(obj => obj.birthday === formattedDate)[0];
         let rankResult = dataResult.rank;
+        console.log("rank result", rankResult);
         result.innerHTML = `<p class="mainResult">Your lucky ranking is <strong>#${rankResult}</strong>!</p>`;
         switch(rankResult) {
           case rankResult <= 50:
