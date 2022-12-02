@@ -7,12 +7,12 @@ const datesDropdown = document.getElementById("dates");
 const monthsDatalist = document.getElementById("monthInput");
 const datesDatalist = document.getElementById("dateInput");
 
-const monthsArray = Array(12);
+const monthsArray = Array.from(Array(12).keys());
 console.log(monthsArray);
-const datesArray = Array(31);
+const datesArray = Array.from(Array(31).keys());
 
 document.onload = function() { 
-  monthsArray.forEach((month, index) => {
+  monthsArray.forEach(month => {
     console.log("month", month);
     let monthName = dayjs().month(index).format("MMMM");
     let opt = document.createElement("option");
@@ -21,7 +21,7 @@ document.onload = function() {
     monthsDropdown.append(opt);
   });
 
-  datesArray.forEach((date, index) => {
+  datesArray.forEach(date => {
     console.log("date", date);
     let opt = document.createElement("option");
     opt.value = index + 1;
