@@ -12,16 +12,18 @@
         <div id="date-group">
           <div id="month-group" class="group">
             <label for="monthInput">Month</label>
-            <input list="months" id="monthInput" name="months" placeholder="Month..." required />
-            <datalist id="months"></datalist>
+            <select name="months" id="months">
+              <option>Month...</option>
+            </select>
           </div>
-          <div id="date-group"class="group">
+          <div id="dates-group"class="group">
             <label for="dateInput">Date</label>
-            <input list="dates" id="dateInput" name="dates" placeholder="Date..." required />
-            <dataList id="dates"></dataList>
+            <select name="dates" id="dates">
+              <option>Date...</option>
+            </select>
           </div>
+          <input type="submit" id="submit" name="submit" value="I'm feeling lucky!" />
         </div>
-        <input type="submit" id="submit" name="submit" value="I'm feeling lucky!" />
       </form>
       <div id="result"></div>
       <footer>

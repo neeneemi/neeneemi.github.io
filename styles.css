@@ -1,50 +1,60 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@400;900&display=swap');
+
 body {
   margin: 0;
   padding: 0;
-}
-
-#container {
   width: 100%;
-}
-@import url('https://fonts.googleapis.com/css2?family=Lato&display=swap');
-
-body {
   font-family: 'Lato', sans-serif;
 }
 
 h1 {
-  margin-left: 2%;
+  text-align: center;
+  font-weight: 900;
+  font-size: 30pt;
 }
 
-form {
-  padding: 2%;
+#container {
+  width: 100%;
+  margin: auto;
+}
+
+#form {
+  width: 30%;
+  margin: auto;
+  margin-top: 3%;
+  text-align: center;
 }
 
 #date-group {
-  width: 25%;
+  width: 100%;
+  margin: auto;
   display: flex;
   flex-flow: row nowrap;
-  align-items: flex-start;
-  justify-content: space-between;
+  align-items: flex-end;
+  justify-content: space-around;
 }
 
 #date-group .group {
   display: flex;
   flex-flow: column nowrap;
+  align-items: flex-start;
+  width: 33%;
 }
 
-input[type=submit] {
-  margin-top: 2%;
+select {
+  width: 100%;
 }
 
 #result {
-  margin-left: 2%;
-  padding: 2% 0%;
+  text-align: center;
+  margin-top: 3%;
 }
 
 footer {
-  padding: 2%;
   border-top: 1px solid #dddddd;
   font-size: 8pt;
   color: #777;
+  text-align: center;
+  padding-top: 1%;
+  margin-top: 5%;
 }
