@@ -47,13 +47,13 @@ form.onsubmit = function(e) {
         console.log("rank result", rankResult);
         if (rankResult <= 50) {
           result.innerHTML += "<p style='font-style: italic'>Wow, it's really your lucky year! Maybe you'll find a dollar on the ground.</p>";
-        } else if (50 < rankResult <= 100) {
+        } if (50 < rankResult <= 100) {
           result.innerHTML += "<p style='font-style: italic'>You're gonna experience some good luck, yippee!</p>";
-        } else if (100 < rankResult <= 200) {
+        } if (100 < rankResult <= 200) {
           result.innerHTML += "<p style='font-style: italic'>Your luck is pretty average this year. Don't expect anything grand to happen, okay?</p>";
-        } else if (200 < rankResult <= 300) {
+        } if (200 < rankResult <= 300) {
           result.innerHTML += "<p style='font-style: italic'>Your luck's not gonna be the best, but keep your head up! This doesn't mean everything.</p>";
-        } else if (300 < rankResult <= 366) {
+        } if (300 < rankResult <= 366) {
           result.innerHTML += "<p style='font-style: italic'>Um.</p> <img src='./images/MakoCringe.png' alt='Um.' />";
         }
       }
