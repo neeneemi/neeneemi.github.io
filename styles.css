@@ -1,24 +1,30 @@
-@import url('https://fonts.googleapis.com/css2?family=Lato:wght@400;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@400;900&family=Pacifico&display=swap');
 
 html, body {
   margin: 0;
   padding: 0;
   width: 100%;
   height: 100%;
+  max-height: 100%;
 }
 
 body {
   font-family: 'Lato', sans-serif;
-  background-image: linear-gradient(#9ac9ff 1%, #e8f8ff);
+  background-image: linear-gradient(#a5cfff 1%, #e8f8ff);
+  background-repeat: no-repeat;
+  overflow: clip;
 }
 
 main {
+  position: relative;
   width: 100%;
   height: 100%;
+  max-height: 100%;
+  right: 0;
   background-image: url("./images/rabbits.png");
   background-repeat: no-repeat;
-  background-size: 40%;
-  background-position: 0% 130%;
+  background-size: 55%;
+  background-position: -7% 10%;
 }
 
 a:link, a:visited {
@@ -26,29 +32,24 @@ a:link, a:visited {
 }
 
 h1 {
-  text-align: center;
+  text-align: right;
+  margin-right: 12%;
   font-weight: 900;
-  font-size: 30pt;
-  color: #75518a;
-}
-
-h3 {
-  text-align: center;
-  font-weight: 400;
+  font-size: 40pt;
+  color: #fff;
 }
 
 #container {
   position: absolute;
-  left: 0;
   right: 0;
-  margin: auto;
-  top: 2%;
-  width: 35%;
-  background: #ffeab1;
-  border-radius: 20px;
-  border: 2px solid #eed694;
-  padding: 3%;
-  color: #8d638b;
+  top: 10%;
+  width: 55%;
+  background: #ffffffde;
+  /* border-left: 2px solid #9095e0dd;
+  border-bottom: 3px solid #9095e0dd; */
+  border-radius: 20px 0px 0px 20px;
+  padding: 1% 3% 3% 3%;
+  color: #676bb9;
 }
 
 #form {
@@ -64,7 +65,7 @@ h3 {
   display: flex;
   flex-flow: row nowrap;
   align-items: flex-end;
-  justify-content: space-around;
+  /* justify-content: space-around; */
 }
 
 #date-group .group {
@@ -72,6 +73,7 @@ h3 {
   flex-flow: column nowrap;
   align-items: flex-start;
   width: 33%;
+  margin-right: 2%;
 }
 
 select {
@@ -98,13 +100,33 @@ input[type=submit] {
 
 footer {
   font-size: 8pt;
-  color: rgb(143, 99, 128);
   text-align: center;
-  padding-top: 1%;
+  padding: 1% 0%;
   margin-top: 5%;
 }
 
 @media (max-width: 768px) {
+  main {
+    background-size: 120%;
+    background-position-x: 30%;
+    background-position-y: 75%;
+  }
+
+  h1 {
+    text-align: center;
+    width: 100%;
+    font-size: 30pt;
+    margin-top: 10%;
+  }
+  
+  #container {
+    position: static;
+    margin: auto;
+    width: 90%;
+    margin-top: 10%;
+    border-radius: 20px;
+  }
+
   form {
     width: 100%;
   }
@@ -113,5 +135,16 @@ footer {
     width: 100%;
     padding: 2%;
     flex-flow: column nowrap;
+    align-items: flex-start;
+    justify-content: space-around;
+  }
+
+  #date-group .group {
+    width: 100%;
+    margin-top: 5%;
+  }
+
+  input[type=submit] {
+    margin-top: 5%;
   }
 }
