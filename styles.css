@@ -108,6 +108,17 @@ footer {
   margin-top: 5%;
 }
 
+#tagline {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  margin-bottom: 3%;
+  margin-right: 3%;
+  font-family: 'Pacifico', cursive;
+  font-size: 30pt;
+  color: #b8d4ff;
+}
+
 @media (max-width: 768px) {
   main {
     background-size: 120%;
@@ -149,5 +160,11 @@ footer {
 
   input[type=submit] {
     margin-top: 5%;
+  }
+
+  #tagline {
+    font-size: 20pt;
+    text-align: center;
+    margin-bottom: 25%;
   }
 }

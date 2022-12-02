@@ -37,31 +37,22 @@ form.onsubmit = function(e) {
   fetch("./data/array_vals.json")
     .then(response => response.json())
     .then(data => { 
-      console.log(data);
       if (!dayjs(`${monthVal} ${dateVal}, ${YEAR}`).isValid()) {
         result.innerHTML = "Sorry, that date is invalid."
       } else {
         let dataResult = data.filter(obj => obj.birthday === formattedDate)[0];
         let rankResult = dataResult.rank;
         result.innerHTML = `<p class="mainResult">Your lucky ranking is <strong>#${rankResult}</strong>!</p>`;
-        switch(rankResult) {
-          case rankResult <= 50:
-            result.innerHTML += "<p style='font-style: italic'>Wow, it's really your lucky year! Maybe you'll find a dollar on the ground.</p>";
-            break;
-          case 50 < rankResult <= 100:
-            result.innerHTML += "<p style='font-style: italic'>You're gonna experience some good luck, yippee!</p>";
-            break;
-          case 100 < rankResult <= 200:
-            result.innerHTML += "<p style='font-style: italic'>Your luck is pretty average this year. Don't expect anything grand to happen, okay?</p>";
-            break;
-          case 200 < rankResult <= 300:
-            result.innerHTML += "<p style='font-style: italic'>Your luck's not gonna be the best, but keep your head up! This doesn't mean everything.</p>";
-            break;
-          case 300 < rankResult <= 366:
-            result.innerHTML += "<p style='font-style: italic'>Um.</p> <img src='./images/MakoCringe.png' alt='Um.' />";
-            break;
-          default:
-            break;
+        if (rankResult <= 50) {
+          result.innerHTML += "<p style='font-style: italic'>Wow, it's really your lucky year! Maybe you'll find a dollar on the ground.</p>";
+        } else if (50 < rankResult <= 100) {
+          result.innerHTML += "<p style='font-style: italic'>You're gonna experience some good luck, yippee!</p>";
+        } else if (100 < rankResult <= 200) {
+          result.innerHTML += "<p style='font-style: italic'>Your luck is pretty average this year. Don't expect anything grand to happen, okay?</p>";
+        } else if (200 < rankResult <= 300) {
+          result.innerHTML += "<p style='font-style: italic'>Your luck's not gonna be the best, but keep your head up! This doesn't mean everything.</p>";
+        } else if (300 < rankResult <= 366) {
+          result.innerHTML += "<p style='font-style: italic'>Um.</p> <img src='./images/MakoCringe.png' alt='Um.' />";
         }
       }
     });
