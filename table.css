@@ -9,6 +9,11 @@ html, body {
   overflow-x: clip;
   font-family: 'Lato', sans-serif;
   color: #676bb9;
+  background-image: url("./images/rabbits.png");
+  background-attachment: fixed;
+  background-size: 50%;
+  background-position: right bottom;
+  background-repeat: no-repeat;
 }
 
 a:link, a:visited {
@@ -27,11 +32,6 @@ h1 {
 main {
   width: 100%;
   height: auto;
-  background-image: url("./images/rabbits.png");
-  background-attachment: fixed;
-  background-size: 50%;
-  background-position: right bottom;
-  background-repeat: no-repeat;
   margin-left: 2%;
   margin-bottom: 3%;
 }
@@ -46,11 +46,6 @@ table {
   font-size: 16pt;
 }
 
-thead {
-  position: sticky; 
-  /* i make my money on my own yeah wakin up 5 in the morning yeah throwin money in the oven yeah fuck sleep and its cousin yeah */
-}
-
 th, td {
   padding: 5px;
 }
@@ -60,7 +55,9 @@ tr {
 }
 
 th {
-  position: relative;
+  position: sticky;
+  /* i make my money on my own yeah wakin up 5 in the morning yeah throwin money in the oven yeah fuck sleep and its cousin yeah */
+  top: 0;
   text-align: left;
 }
 
@@ -72,6 +69,20 @@ th i {
   position: absolute;
   top: 20%;
   right: 0;
+}
+
+#btt {
+  position: fixed;
+  right: 0;
+  top: 0;
+  margin-top: 7%;
+  margin-right: 16%;
+  padding: 10px;
+  font-size: 25pt;
+}
+
+#btt a:link, #btt a:visited {
+  text-decoration: none;
 }
 
 @media (max-width: 768px) {

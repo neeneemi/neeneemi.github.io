@@ -1,3 +1,22 @@
+const btt = document.getElementById("btt");
+
+function scrollFunction() {
+  if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+    btt.style.display = "block";
+  } else {
+    btt.style.display = "none";
+  }
+}
+
+function topFunction() {
+  document.body.scrollTop = 0; 
+  document.documentElement.scrollTop = 0; 
+} 
+
+window.onscroll = () => scrollFunction();
+
+btt.onclick = () => topFunction();
+
 const UP_ARROW_CLASS = "ti ti-arrows-up";
 const DOWN_ARROW_CLASS = "ti ti-arrows-down";
 const SORT_CLASS = "ti ti-arrows-up-down";
@@ -58,9 +77,9 @@ fetch("./data/array_vals.json")
               currentState = "unsorted";
               rankArrows.className = SORT_CLASS;
               bdayArrows.className = SORT_CLASS;
+              sorted.sort((a, b) => a.rank - b.rank);
               tbody.innerHTML = "";
-              console.log(ORIGINAL_STATE);
-              ORIGINAL_STATE.forEach(date => renderRows(date));
+              sorted.forEach(date => renderRows(date));
               break;
             default:
               currentState = "rankAsc";
@@ -88,9 +107,9 @@ fetch("./data/array_vals.json")
               currentState = "unsorted";
               rankArrows.className = SORT_CLASS;
               bdayArrows.className = SORT_CLASS;
+              sorted.sort((a, b) => a.rank - b.rank);
               tbody.innerHTML = "";
-              console.log(ORIGINAL_STATE);
-              ORIGINAL_STATE.forEach(date => renderRows(date));
+              sorted.forEach(date => renderRows(date));
               break;
             default:
               currentState = "bdayAsc";
