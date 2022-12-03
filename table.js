@@ -11,23 +11,33 @@ let bdayAscButton = document.createElement("i").className;
 
 const sortStates = ["rankAsc", "rankDesc", "dateAsc", "dateDesc", "unsorted"];
 
-let currentState = "rankAsc";
+let currentState = "unsorted";
+
+rankingHeading.onclick = (e) => {
+  switch(currentState) {
+    case "unsorted":
+      currentState = "rankAsc";
+  }
+}
+ 
+function renderRows() {
+  let row = document.createElement("tr");
+  let rankCol = document.createElement("td");
+  let bdayCol = document.createElement("td");
+  let rankText = document.createTextNode(`#${date.rank}`);
+  let bdayText = document.createTextNode(dayjs(`2023-${date.birthday}`).format("MMMM D"));
+  rankCol.appendChild(rankText);
+  bdayCol.appendChild(bdayText);
+  row.appendChild(rankCol);
+  row.appendChild(bdayCol);
+  tbody.appendChild(row);
+}
 
 fetch("./data/array_vals.json")
     .then(response => response.json())
     .then(data => { 
         data.forEach(date => {
-          console.log("date", date);
-          let row = document.createElement("tr");
-          let rankCol = document.createElement("td");
-          let bdayCol = document.createElement("td");
-          let rankText = document.createTextNode(`#${date.rank}`);
-          let bdayText = document.createTextNode(dayjs(`2023-${date.birthday}`).format("MMMM D"));
-          rankCol.appendChild(rankText);
-          bdayCol.appendChild(bdayText);
-          row.appendChild(rankCol);
-          row.appendChild(bdayCol);
-          tbody.appendChild(row);
+          renderRows();
         })
      });
 
