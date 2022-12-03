@@ -79,6 +79,7 @@ th i {
   margin-right: 16%;
   padding: 10px;
   font-size: 25pt;
+  transition: display 0.2s;
 }
 
 #btt a:link, #btt a:visited {
