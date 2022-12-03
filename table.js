@@ -17,6 +17,7 @@ fetch("./data/array_vals.json")
     .then(response => response.json())
     .then(data => { 
         data.forEach(date => {
+          console.log("date", date);
           let row = document.createElement("tr");
           let rankCol = document.createElement("td");
           let bdayCol = document.createElement("td");
