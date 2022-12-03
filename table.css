@@ -59,6 +59,9 @@ th {
   /* i make my money on my own yeah wakin up 5 in the morning yeah throwin money in the oven yeah fuck sleep and its cousin yeah */
   top: 0;
   text-align: left;
+  background: #fff;
+  border: 1px solid #676bb9;
+  border-collapse: collapse;
 }
 
 th:hover {
