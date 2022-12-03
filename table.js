@@ -27,6 +27,7 @@ fetch("./data/array_vals.json")
           bdayCol.appendChild(bdayText);
           row.appendChild(rankCol);
           row.appendChild(bdayCol);
+          tbody.appendChild(row);
         })
      });
 
