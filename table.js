@@ -44,14 +44,15 @@ fetch("./data/array_vals.json")
 
         rankingHeading.onclick = (e) => {
           e.preventDefault();
+          let sorted = data;
           console.log("click rank header");
           switch(currentState) {
             case "rankAsc":
               currentState = "rankDesc";
               rankArrows.className = DOWN_ARROW_CLASS;
-              data.sort((a, b) => b.rank - a.rank);
+              sorted = sorted.sort((a, b) => b.rank - a.rank);
               tbody.innerHTML = "";
-              data.forEach(date => renderRows(date));
+              sorted.forEach(date => renderRows(date));
               break;
             case "rankDesc":
               currentState = "unsorted";
@@ -64,9 +65,9 @@ fetch("./data/array_vals.json")
             default:
               currentState = "rankAsc";
               rankArrows.className = UP_ARROW_CLASS;
-              data.sort((a, b) => a.rank - b.rank);
+              sorted = sorted.sort((a, b) => b.rank - a.rank);
               tbody.innerHTML = "";
-              data.forEach(date => renderRows(date));
+              sorted.forEach(date => renderRows(date));
               break;
           }
         }
@@ -78,25 +79,24 @@ fetch("./data/array_vals.json")
             case "bdayAsc":
               currentState = "bdayDesc";
               bdayArrows.className = DOWN_ARROW_CLASS;
-              data.sort((a, b) => dayjs(`2023-${b.birthday}`) - dayjs(`2023-${a.birthday}`));
+              sorted = sorted.sort((a, b) => dayjs(`2023-${b.birthday}`) - dayjs(`2023-${a.birthday}`));
               tbody.innerHTML = "";
-              data.forEach(date => renderRows(date));
+              sorted.forEach(date => renderRows(date));
               break;
             case "bdayDesc":
               currentState = "unsorted";
               rankArrows.className = SORT_CLASS;
               bdayArrows.className = SORT_CLASS;
               tbody.innerHTML = "";
-              console.log(tbody.innerHTML);
               console.log(ORIGINAL_STATE);
               ORIGINAL_STATE.forEach(date => renderRows(date));
               break;
             default:
               currentState = "bdayAsc";
               bdayArrows.className = UP_ARROW_CLASS;
-              data.sort((a, b) => dayjs(`2023-${a.birthday}`) - dayjs(`2023-${b.birthday}`));
+              sorted = sorted.sort((a, b) => dayjs(`2023-${a.birthday}`) - dayjs(`2023-${b.birthday}`));
               tbody.innerHTML = "";
-              data.forEach(date => renderRows(date));
+              sorted.forEach(date => renderRows(date));
               break;
           }
         }
