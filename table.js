@@ -50,7 +50,7 @@ fetch("./data/array_vals.json")
             case "rankAsc":
               currentState = "rankDesc";
               rankArrows.className = DOWN_ARROW_CLASS;
-              sorted = sorted.sort((a, b) => b.rank - a.rank);
+              sorted.sort((a, b) => b.rank - a.rank);
               tbody.innerHTML = "";
               sorted.forEach(date => renderRows(date));
               break;
@@ -65,7 +65,7 @@ fetch("./data/array_vals.json")
             default:
               currentState = "rankAsc";
               rankArrows.className = UP_ARROW_CLASS;
-              sorted = sorted.sort((a, b) => b.rank - a.rank);
+              sorted.sort((a, b) => b.rank - a.rank);
               tbody.innerHTML = "";
               sorted.forEach(date => renderRows(date));
               break;
@@ -74,12 +74,13 @@ fetch("./data/array_vals.json")
 
         bdayHeading.onclick = (e) => {
           e.preventDefault();
+          let sorted = data;
           console.log("click bday header");
           switch(currentState) {
             case "bdayAsc":
               currentState = "bdayDesc";
               bdayArrows.className = DOWN_ARROW_CLASS;
-              sorted = sorted.sort((a, b) => dayjs(`2023-${b.birthday}`) - dayjs(`2023-${a.birthday}`));
+              sorted.sort((a, b) => dayjs(`2023-${b.birthday}`) - dayjs(`2023-${a.birthday}`));
               tbody.innerHTML = "";
               sorted.forEach(date => renderRows(date));
               break;
@@ -94,7 +95,7 @@ fetch("./data/array_vals.json")
             default:
               currentState = "bdayAsc";
               bdayArrows.className = UP_ARROW_CLASS;
-              sorted = sorted.sort((a, b) => dayjs(`2023-${a.birthday}`) - dayjs(`2023-${b.birthday}`));
+              sorted.sort((a, b) => dayjs(`2023-${a.birthday}`) - dayjs(`2023-${b.birthday}`));
               tbody.innerHTML = "";
               sorted.forEach(date => renderRows(date));
               break;
