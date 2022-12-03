@@ -36,11 +36,6 @@ main {
   margin-bottom: 3%;
 }
 
-table, th, td {
-  border: 1px solid #676bb9;
-  border-collapse: collapse;
-}
-
 table {
   width: 33%;
   font-size: 16pt;
@@ -54,14 +49,16 @@ tr {
   width: 50%;
 }
 
+tbody:nth-child(even) {
+  background-color: #d0d2ff;
+}
+
 th {
   position: sticky;
   /* i make my money on my own yeah wakin up 5 in the morning yeah throwin money in the oven yeah fuck sleep and its cousin yeah */
   top: 0;
   text-align: left;
   background: #fff;
-  border: 1px solid #676bb9;
-  border-collapse: collapse;
 }
 
 th:hover {
@@ -76,10 +73,10 @@ th i {
 
 #btt {
   position: fixed;
-  right: 0;
-  top: 0;
-  margin-top: 7%;
-  margin-right: 16%;
+  left: 0;
+  bottom: 0;
+  margin-bottom: 2%;
+  margin-left: 40%;
   padding: 10px;
   transition: display 0.2s;
 }
