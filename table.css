@@ -8,10 +8,11 @@ html, body {
   max-height: 100%;
   overflow: clip;
   font-family: 'Lato', sans-serif;
+  color: #676bb9;
 }
 
 a:link, a:visited {
-  color: #6774e6;
+  color: #84b6f8;
 }
 
 header {
@@ -35,6 +36,38 @@ main {
 }
 
 table, th, td {
-  border: 1px solid #000;
+  border: 1px solid #676bb9;
   border-collapse: collapse;
+}
+
+table {
+  width: 33%;
+}
+
+th, td {
+  padding: 5px;
+}
+
+@media (max-width: 768px) {
+
+  main, header {
+    width: 96%;
+    margin: 0;
+    padding: 2%;
+  }
+
+  main {
+    background-size: 100%;
+    background-position: center bottom;
+  }
+
+  h1 {
+    font-size: 25pt;
+  }
+
+  table {
+    width: 100%;
+    background-color: #ffffffcc;
+  }
+
 }
