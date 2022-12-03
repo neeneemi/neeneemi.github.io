@@ -41,12 +41,28 @@ table, th, td {
 }
 
 table {
-  width: 45%;
+  width: 33%;
   font-size: 16pt;
 }
 
 th, td {
   padding: 5px;
+}
+
+tr {
+  width: 50%;
+}
+
+th {
+  text-align: left;
+}
+
+th:hover {
+  cursor: pointer;
+}
+
+th i {
+  margin-left: 65%;
 }
 
 @media (max-width: 768px) {
