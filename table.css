@@ -49,8 +49,8 @@ tr {
   width: 50%;
 }
 
-tbody:nth-child(even) {
-  background-color: #d0d2ff;
+tr:nth-child(even) {
+  background-color: #e2e3ff;
 }
 
 th {
