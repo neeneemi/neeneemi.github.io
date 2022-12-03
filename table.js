@@ -1,5 +1,5 @@
-const UP_ARROW_CLASS = "ti ti-arrow-up-bar";
-const DOWN_ARROW_CLASS = "ti ti-arrow-down-bar";
+const UP_ARROW_CLASS = "ti ti-arrows-up";
+const DOWN_ARROW_CLASS = "ti ti-arrows-down";
 const SORT_CLASS = "ti ti-arrows-up-down";
 
 const sortStates = ["rankAsc", "rankDesc", "dateAsc", "dateDesc", "unsorted"];
@@ -50,7 +50,7 @@ fetch("./data/array_vals.json")
             case "rankAsc":
               currentState = "rankDesc";
               rankArrows.className = DOWN_ARROW_CLASS;
-              sorted.sort((a, b) => a.rank - b.rank);
+              sorted.sort((a, b) => b.rank - a.rank);
               tbody.innerHTML = "";
               sorted.forEach(date => renderRows(date));
               break;
@@ -65,7 +65,7 @@ fetch("./data/array_vals.json")
             default:
               currentState = "rankAsc";
               rankArrows.className = UP_ARROW_CLASS;
-              sorted.sort((a, b) => b.rank - a.rank);
+              sorted.sort((a, b) => a.rank - b.rank);
               tbody.innerHTML = "";
               sorted.forEach(date => renderRows(date));
               break;
