@@ -33,6 +33,7 @@ main {
   background-position: right bottom;
   background-repeat: no-repeat;
   margin-left: 2%;
+  margin-bottom: 3%;
 }
 
 table, th, td {
@@ -54,6 +55,7 @@ tr {
 }
 
 th {
+  position: relative;
   text-align: left;
 }
 
@@ -62,7 +64,9 @@ th:hover {
 }
 
 th i {
-  margin-left: 65%;
+  position: absolute;
+  top: 20%;
+  right: 0;
 }
 
 @media (max-width: 768px) {
