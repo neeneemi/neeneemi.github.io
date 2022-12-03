@@ -1,5 +1,5 @@
-const UP_ARROW_CLASS = "ti ti-arrow-bar-up";
-const DOWN_ARROW_CLASS = "ti ti-arrow-bar-down";
+const UP_ARROW_CLASS = "ti ti-arrow-up-bar";
+const DOWN_ARROW_CLASS = "ti ti-arrow-down-bar";
 const SORT_CLASS = "ti ti-arrows-up-down";
 
 const sortStates = ["rankAsc", "rankDesc", "dateAsc", "dateDesc", "unsorted"];
@@ -36,6 +36,7 @@ fetch("./data/array_vals.json")
     .then(response => response.json())
     .then(data => { 
         const ORIGINAL_STATE = data;
+        console.log(ORIGINAL_STATE);
 
         ORIGINAL_STATE.forEach(date => {
           renderRows(date);
@@ -50,7 +51,6 @@ fetch("./data/array_vals.json")
               rankArrows.className = DOWN_ARROW_CLASS;
               data.sort((a, b) => b.rank - a.rank);
               tbody.innerHTML = "";
-              console.log(tbody.innerHTML);
               data.forEach(date => renderRows(date));
               break;
             case "rankDesc":
@@ -58,7 +58,7 @@ fetch("./data/array_vals.json")
               rankArrows.className = SORT_CLASS;
               bdayArrows.className = SORT_CLASS;
               tbody.innerHTML = "";
-              console.log(tbody.innerHTML);
+              console.log(ORIGINAL_STATE);
               ORIGINAL_STATE.forEach(date => renderRows(date));
               break;
             default:
@@ -66,7 +66,6 @@ fetch("./data/array_vals.json")
               rankArrows.className = UP_ARROW_CLASS;
               data.sort((a, b) => a.rank - b.rank);
               tbody.innerHTML = "";
-              console.log(tbody.innerHTML);
               data.forEach(date => renderRows(date));
               break;
           }
@@ -81,7 +80,6 @@ fetch("./data/array_vals.json")
               bdayArrows.className = DOWN_ARROW_CLASS;
               data.sort((a, b) => dayjs(`2023-${b.birthday}`) - dayjs(`2023-${a.birthday}`));
               tbody.innerHTML = "";
-              console.log(tbody.innerHTML);
               data.forEach(date => renderRows(date));
               break;
             case "bdayDesc":
@@ -90,6 +88,7 @@ fetch("./data/array_vals.json")
               bdayArrows.className = SORT_CLASS;
               tbody.innerHTML = "";
               console.log(tbody.innerHTML);
+              console.log(ORIGINAL_STATE);
               ORIGINAL_STATE.forEach(date => renderRows(date));
               break;
             default:
@@ -97,7 +96,6 @@ fetch("./data/array_vals.json")
               bdayArrows.className = UP_ARROW_CLASS;
               data.sort((a, b) => dayjs(`2023-${a.birthday}`) - dayjs(`2023-${b.birthday}`));
               tbody.innerHTML = "";
-              console.log(tbody.innerHTML);
               data.forEach(date => renderRows(date));
               break;
           }
