@@ -21,8 +21,10 @@ fetch("./data/array_vals.json")
           let row = document.createElement("tr");
           let rankCol = document.createElement("td");
           let bdayCol = document.createElement("td");
-          rankCol.textContent(`${date.rank}`);
-          bdayCol.textContent(date.birthday);
+          let rankText = document.createTextNode(`${date.rank}`);
+          let bdayText = document.createTextNode(date.birthday);
+          rankCol.appendChild(rankText);
+          bdayCol.appendChild(bdayText);
           row.appendChild(rankCol);
           row.appendChild(bdayCol);
         })
