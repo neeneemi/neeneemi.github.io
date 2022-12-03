@@ -44,6 +44,7 @@ table {
 th, td {
   margin: 0;
   padding: 5px;
+  border: none;
 }
 
 tr {
@@ -76,8 +77,8 @@ th i {
   position: fixed;
   left: 0;
   bottom: 0;
-  margin-bottom: 2%;
-  margin-left: 35%;
+  margin-bottom: 1%;
+  margin-left: 36%;
   padding: 10px;
   transition: display 0.2s;
 }
