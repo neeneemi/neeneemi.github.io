@@ -46,6 +46,11 @@ table {
   font-size: 16pt;
 }
 
+thead {
+  position: sticky; 
+  /* i make my money on my own yeah wakin up 5 in the morning yeah throwin money in the oven yeah fuck sleep and its cousin yeah */
+}
+
 th, td {
   padding: 5px;
 }
