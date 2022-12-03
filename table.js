@@ -17,10 +17,11 @@ rankingHeading.onclick = (e) => {
   switch(currentState) {
     case "unsorted":
       currentState = "rankAsc";
+      break;
   }
 }
  
-function renderRows() {
+function renderRows(date) {
   let row = document.createElement("tr");
   let rankCol = document.createElement("td");
   let bdayCol = document.createElement("td");
@@ -37,7 +38,7 @@ fetch("./data/array_vals.json")
     .then(response => response.json())
     .then(data => { 
         data.forEach(date => {
-          renderRows();
+          renderRows(date);
         })
      });
 
