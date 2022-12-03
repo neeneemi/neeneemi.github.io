@@ -2,9 +2,9 @@ const btt = document.getElementById("btt");
 
 function scrollFunction() {
   if (document.body.scrollTop > 100 || document.documentElement.scrollTop > 100) {
-    btt.style.display = "block";
+    btt.style.visibility = "visible";
   } else {
-    btt.style.display = "none";
+    btt.style.visibility = "hidden";
   }
 }
 

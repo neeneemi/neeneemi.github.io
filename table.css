@@ -80,7 +80,7 @@ th i {
   margin-bottom: 1%;
   margin-left: 36%;
   padding: 10px;
-  transition: display 0.2s;
+  transition: visibility 0.2s;
 }
 
 #btt a:link, #btt a:visited {
