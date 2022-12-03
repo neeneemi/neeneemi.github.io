@@ -50,7 +50,7 @@ fetch("./data/array_vals.json")
             case "rankAsc":
               currentState = "rankDesc";
               rankArrows.className = DOWN_ARROW_CLASS;
-              sorted.sort((a, b) => b.rank - a.rank);
+              sorted.sort((a, b) => a.rank - b.rank);
               tbody.innerHTML = "";
               sorted.forEach(date => renderRows(date));
               break;
