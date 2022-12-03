@@ -49,10 +49,6 @@ th, td {
   padding: 5px;
 }
 
-th:hover {
-  cursor: pointer;
-}
-
 @media (max-width: 768px) {
 
   main, header {
