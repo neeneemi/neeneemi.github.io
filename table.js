@@ -1,6 +1,6 @@
 const UP_ARROW_CLASS = "ti ti-arrow-bar-up";
 const DOWN_ARROW_CLASS = "ti ti-arrow-bar-down";
-const SORT_CLASS = "ti ti-arrows-down-up";
+const SORT_CLASS = "ti ti-arrows-up-down";
 
 const sortStates = ["rankAsc", "rankDesc", "dateAsc", "dateDesc", "unsorted"];
 let currentState = "unsorted";
@@ -93,7 +93,7 @@ fetch("./data/array_vals.json")
               ORIGINAL_STATE.forEach(date => renderRows(date));
               break;
             default:
-              currentState = "rankAsc";
+              currentState = "bdayAsc";
               bdayArrows.className = UP_ARROW_CLASS;
               data.sort((a, b) => dayjs(`2023-${a.birthday}`) - dayjs(`2023-${b.birthday}`));
               tbody.innerHTML = "";
