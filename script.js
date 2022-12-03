@@ -33,7 +33,7 @@ form.onsubmit = function(e) {
 
   let formattedDate = dayjs(`${monthVal} ${dateVal}, ${YEAR}`).format("MM-DD");
   
-  fetch("./data/array_vals_1.json")
+  fetch("./data/array_vals.json")
     .then(response => response.json())
     .then(data => { 
       if (!dayjs(`${monthVal} ${dateVal}, ${YEAR}`).isValid()) {
