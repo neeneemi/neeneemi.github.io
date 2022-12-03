@@ -22,7 +22,7 @@ fetch("./data/array_vals.json")
           let rankCol = document.createElement("td");
           let bdayCol = document.createElement("td");
           let rankText = document.createTextNode(`#${date.rank}`);
-          let bdayText = document.createTextNode(dayjs(`2023-${date.birthday}`).format("MMMM DD"));
+          let bdayText = document.createTextNode(dayjs(`2023-${date.birthday}`).format("MMMM D"));
           rankCol.appendChild(rankText);
           bdayCol.appendChild(bdayText);
           row.appendChild(rankCol);
